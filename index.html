@@ -1,0 +1,471 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entre Nós ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: radial-gradient(circle at top, #4b1028, #190612 50%, #080207);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 650px;
+        }
+
+        .card {
+            background: rgba(20, 5, 13, 0.92);
+            border: 1px solid rgba(255, 80, 140, .25);
+            border-radius: 30px;
+            padding: 40px 30px;
+            box-shadow: 0 25px 80px rgba(0,0,0,.6);
+        }
+
+        .logo {
+            text-align: center;
+            font-size: 60px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 40px;
+            margin: 10px 0;
+            color: #ff6495;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #d9b8c5;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .levels {
+            display: grid;
+            gap: 15px;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        .level {
+            border: none;
+            padding: 20px;
+            border-radius: 18px;
+            cursor: pointer;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: left;
+            transition: .25s;
+        }
+
+        .level:hover {
+            transform: translateY(-3px);
+        }
+
+        .romantico {
+            background: linear-gradient(135deg, #7d2449, #b53f6d);
+        }
+
+        .provocante {
+            background: linear-gradient(135deg, #8e173f, #df356d);
+        }
+
+        .quente {
+            background: linear-gradient(135deg, #7e102f, #e52d59);
+        }
+
+        .level span {
+            display: block;
+            font-size: 13px;
+            font-weight: normal;
+            opacity: .8;
+            margin-top: 5px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+        }
+
+        .badge {
+            background: rgba(255,75,130,.15);
+            border: 1px solid rgba(255,100,150,.25);
+            padding: 8px 14px;
+            border-radius: 50px;
+            font-size: 13px;
+        }
+
+        .question-box {
+            min-height: 230px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 25px;
+            border-radius: 25px;
+            background: rgba(255,50,110,.10);
+            margin-bottom: 25px;
+        }
+
+        .question {
+            font-size: 25px;
+            line-height: 1.5;
+            font-weight: bold;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .main-btn {
+            border: none;
+            border-radius: 15px;
+            padding: 16px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .next {
+            background: linear-gradient(135deg, #ff3976, #ff6495);
+            color: white;
+        }
+
+        .challenge {
+            background: rgba(255,255,255,.08);
+            color: white;
+        }
+
+        .challenge-box {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 18px;
+            background: rgba(255,55,110,.1);
+            text-align: center;
+        }
+
+        .challenge-title {
+            color: #ff78a7;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .challenge-text {
+            line-height: 1.5;
+        }
+
+        .back {
+            background: none;
+            border: none;
+            color: #cda7b6;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            color: #765362;
+            font-size: 12px;
+            margin-top: 25px;
+        }
+
+        @media(max-width:500px) {
+            .card {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .question {
+                font-size: 21px;
+            }
+
+            .buttons {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- INÍCIO -->
+    <div class="card" id="home">
+
+        <div class="logo">❤️</div>
+
+        <h1>Entre Nós</h1>
+
+        <p class="subtitle">
+            Um jogo para casais com perguntas românticas,
+            provocantes e ousadas. ✨
+        </p>
+
+        <div class="levels">
+
+            <button class="level romantico"
+                    onclick="startGame('romantico')">
+                💕 Romântico
+                <span>Para criar conexão</span>
+            </button>
+
+            <button class="level provocante"
+                    onclick="startGame('provocante')">
+                😏 Provocante
+                <span>Para aumentar a química</span>
+            </button>
+
+            <button class="level quente"
+                    onclick="startGame('quente')">
+                🔥 Quente
+                <span>Perguntas mais ousadas</span>
+            </button>
+
+        </div>
+
+        <footer>
+            Feito para dois ❤️
+        </footer>
+
+    </div>
+
+
+    <!-- JOGO -->
+    <div class="card hidden" id="game">
+
+        <div class="header">
+
+            <span class="badge" id="levelName">
+                🔥 Quente
+            </span>
+
+            <span class="badge" id="number">
+                #1
+            </span>
+
+        </div>
+
+        <div class="question-box">
+
+            <div class="question" id="question">
+                Pergunta
+            </div>
+
+        </div>
+
+        <div class="buttons">
+
+            <button class="main-btn next"
+                    onclick="nextQuestion()">
+                ❤️ Próxima
+            </button>
+
+            <button class="main-btn challenge"
+                    onclick="challenge()">
+                🎲 Desafio
+            </button>
+
+        </div>
+
+        <div class="challenge-box hidden" id="challengeBox">
+
+            <div class="challenge-title">
+                🔥 DESAFIO
+            </div>
+
+            <div class="challenge-text" id="challengeText">
+            </div>
+
+        </div>
+
+        <div style="text-align:center">
+
+            <button class="back" onclick="home()">
+                ← Voltar
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+const perguntas = {
+
+    romantico: [
+        "Qual foi o momento em que você percebeu que estava gostando de mim?",
+        "Qual é a minha qualidade que você mais admira?",
+        "Qual foi nosso momento mais inesquecível?",
+        "Qual lugar você gostaria de conhecer comigo?",
+        "Qual música lembra nós dois?",
+        "O que faz você se sentir mais amado(a) por mim?",
+        "Qual foi o nosso encontro favorito?",
+        "Se pudesse reviver um momento nosso, qual seria?",
+        "Qual é a coisa mais fofa que eu faço?",
+        "Como você imagina nosso relacionamento daqui a alguns anos?"
+    ],
+
+    provocante: [
+        "Qual foi a primeira coisa em mim que despertou sua atração?",
+        "Qual roupa minha você acha mais atraente?",
+        "Qual olhar meu você acha mais irresistível?",
+        "Qual tipo de carinho você mais gosta de receber?",
+        "Você prefere tomar a iniciativa ou ser surpreendido(a)?",
+        "Qual elogio meu deixa você mais sem graça?",
+        "Qual foi o nosso beijo mais inesquecível?",
+        "O que eu faço que imediatamente chama sua atenção?",
+        "Qual seria um encontro perfeito só para nós dois?",
+        "Qual é o meu jeito mais irresistível?"
+    ],
+
+    quente: [
+        "Qual atitude minha você considera mais sedutora?",
+        "Qual tipo de beijo você mais gosta?",
+        "Qual ambiente seria perfeito para uma noite especial entre nós?",
+        "O que torna um momento entre nós mais intenso para você?",
+        "Qual é uma fantasia romântica que você gostaria de realizar comigo?",
+        "Você prefere receber carinho ou surpreender com carinho?",
+        "Qual é o meu jeito mais irresistível?",
+        "Se tivéssemos uma noite inteira só para nós, como gostaria que começasse?",
+        "O que faz você sentir mais conexão comigo?",
+        "Qual momento entre nós você gostaria de repetir?"
+    ]
+};
+
+
+const desafios = [
+    "💋 Dê um beijo demorado no seu parceiro(a).",
+    "❤️ Faça um elogio olhando nos olhos.",
+    "😏 Conte uma coisa que você acha irresistível no parceiro(a).",
+    "🥰 Dê um abraço por 20 segundos.",
+    "🔥 Faça uma declaração inesperada.",
+    "😉 Troquem um olhar intenso por 10 segundos.",
+    "💞 Conte uma lembrança romântica que gostaria de repetir.",
+    "😘 Dê três beijos escolhidos pelo parceiro(a)."
+];
+
+
+let nivel = "";
+let lista = [];
+let contador = 0;
+
+
+function startGame(n) {
+
+    nivel = n;
+
+    lista = [...perguntas[nivel]];
+
+    contador = 0;
+
+    document.getElementById("home")
+        .classList.add("hidden");
+
+    document.getElementById("game")
+        .classList.remove("hidden");
+
+    let nome = "";
+
+    if(nivel === "romantico")
+        nome = "💕 Romântico";
+
+    if(nivel === "provocante")
+        nome = "😏 Provocante";
+
+    if(nivel === "quente")
+        nome = "🔥 Quente";
+
+    document.getElementById("levelName")
+        .textContent = nome;
+
+    nextQuestion();
+}
+
+
+function nextQuestion() {
+
+    if(lista.length === 0) {
+        lista = [...perguntas[nivel]];
+    }
+
+    let indice =
+        Math.floor(Math.random() * lista.length);
+
+    let pergunta = lista[indice];
+
+    lista.splice(indice, 1);
+
+    contador++;
+
+    document.getElementById("question")
+        .textContent = pergunta;
+
+    document.getElementById("number")
+        .textContent = "#" + contador;
+
+    document.getElementById("challengeBox")
+        .classList.add("hidden");
+}
+
+
+function challenge() {
+
+    let desafio =
+        desafios[
+            Math.floor(Math.random() * desafios.length)
+        ];
+
+    document.getElementById("challengeText")
+        .textContent = desafio;
+
+    document.getElementById("challengeBox")
+        .classList.remove("hidden");
+}
+
+
+function home() {
+
+    document.getElementById("game")
+        .classList.add("hidden");
+
+    document.getElementById("home")
+        .classList.remove("hidden");
+}
+
+</script>
+
+</body>
+</html>
